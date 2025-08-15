@@ -1,0 +1,196 @@
+/* Base styles */
+* { box-sizing: border-box; }
+:root {
+  --bg: #0b0b0c;
+  --card: #111114;
+  --muted: #a8acb3;
+  --text: #e8eaee;
+  --accent: #8b8bff;
+  --border: #1f2024;
+  --chip: #17181c;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  color: var(--text);
+  background: radial-gradient(1000px 600px at 50% -10%, rgba(139,139,255,.15), transparent 60%), var(--bg);
+}
+
+
+
+.section {
+  padding: 4.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #00ffd5;
+  border-radius: 1rem;
+}
+
+/* Card Hover Glow (matches photo hover) */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffd5;
+  border-color: #00ffd5;
+}
+
+/* Profile Photo - Circular Shape */
+.hero__image img {
+  width: 110px;   /* reduced to half */
+  height: 110px;  /* reduced to half */
+  object-fit: cover;
+  border-radius: 50%;  /* circular */
+  border: 4px solid #00ffd5;
+  box-shadow: 0 0 25px #00ffd5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffd5;
+}
+
+/* Containers */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* Navbar */
+.nav {
+  position: sticky; top: 0; z-index: 20;
+  backdrop-filter: blur(6px);
+  background: rgba(11,11,12,.55);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; padding: .8rem 0; }
+.brand { font-weight: 700; letter-spacing: .08em; }
+.nav nav { display: flex; gap: .25rem; flex-wrap: wrap; }
+.nav__link {
+  color: var(--text); text-decoration: none; font-size: .95rem;
+  padding: .55rem .8rem; border-radius: .8rem; border: 1px solid transparent;
+}
+.nav__link:hover { background: #15151a; border-color: var(--border); }
+.nav__link.active { background: #15151a; border-color: var(--border); box-shadow: var(--shadow); }
+
+/* Sections */
+.section { padding: 4.5rem 0; }
+.section__title { font-size: 1.6rem; margin: 0 0 1.25rem; }
+.grid-2 { display: grid; grid-template-columns: 1.2fr .8fr; gap: 2rem; }
+@media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
+
+/* Hero */
+.hero .title { font-size: clamp(2rem, 2vw + 2rem, 3rem); margin: .25rem 0 .4rem; }
+.subtitle { font-weight: 500; opacity: .9; }
+.muted { color: var(--muted); line-height: 1.7; }
+.actions { display: flex; gap: .8rem; margin: 1rem 0; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  text-decoration: none; font-weight: 600; border-radius: 1rem; padding: .75rem 1.05rem;
+  border: 1px solid var(--border); transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn.primary { background: linear-gradient(135deg, #e9e9ff 0%, #b5b5ff 100%); color: #0b0b0c; border-color: transparent; }
+.btn.outline { background: #141419; color: var(--text); }
+.badges { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .5rem; }
+.chip {
+  display: inline-flex; align-items: center; gap: .45rem;
+  background: var(--chip); color: var(--text); padding: .45rem .7rem; border-radius: 999px;
+  border: 1px solid var(--border); font-size: .9rem;
+}
+.chip--ghost { background: transparent; }
+
+.hero__image img { width: 100%; height: auto; border-radius: 1.4rem; border: 1px solid var(--border); box-shadow: var(--shadow); }
+.down { display: grid; place-items: center; padding-top: 1.2rem; color: var(--muted); }
+
+/* Cards */
+.card-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.card-grid.two { grid-template-columns: repeat(2, 1fr); }
+.card-grid.three { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) {
+  .card-grid.two { grid-template-columns: 1fr; }
+  .card-grid.three { grid-template-columns: 1fr; }
+}
+.card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 1.2rem; padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow); transition: transform .15s ease, border-color .15s ease;
+}
+.card:hover { transform: translateY(-2px); border-color: #2a2b33; }
+.card--link { text-decoration: none; color: inherit; display: block; }
+.card__head { font-weight: 600; }
+.edu { list-style: none; padding: 0; margin: 0; }
+.edu__title { font-weight: 600; }
+.edu__meta { color: var(--muted); font-size: .95rem; margin-top: .25rem; }
+
+/* Timeline */
+.timeline { display: grid; gap: 1rem; }
+.timeline__item { background: var(--card); border: 1px solid var(--border); border-radius: 1.2rem; padding: 1.1rem 1.2rem; box-shadow: var(--shadow); }
+.timeline__header { display: flex; justify-content: space-between; gap: .5rem; flex-wrap: wrap; }
+.tl__role { font-weight: 600; }
+.tl__time { color: var(--muted); }
+
+/* Chips wrapper */
+.chips { display: flex; gap: .4rem; flex-wrap: wrap; margin-top: .6rem; }
+
+/* Footer */
+.footer { text-align: center; color: var(--muted); margin-top: 1.5rem; font-size: .85rem; }
+
+/* Animations on reveal */
+.reveal { opacity: 0; transform: translateY(10px); transition: .5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+
+
+
+.section {
+  padding: 4.5rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px #00ffd5;
+  border-radius: 1rem;
+}
+
+/* Card Hover Glow (matches photo hover) */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.2rem;
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffd5;
+  border-color: #00ffd5;
+}
+
+/* Profile Photo - Circular Shape */
+.hero__image img {
+  width: 300px;   /* bigger size */
+  height: 300px; /* b
+  object-fit: cover;
+  border-radius: 50%;  /* perfectly circular */
+  border: 4px solid #00ffd5;
+  box-shadow: 0 0 25px #00ffd5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero__image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #00ffd5;
+}
