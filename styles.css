@@ -31,6 +31,10 @@ body {
   border-radius: 1rem;
 }
 
+.edu li {
+  margin-bottom: 15px; 
+}
+
 /* Card Hover Glow (matches photo hover) */
 .card {
   background: var(--card);
