@@ -1,0 +1,22 @@
+Steps for exporting vs code files to github :
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/lipiksha/clone.git (clone.git will change according to repository)
+git push -u origin main
+
+
+Only for changes done in code :
+
+git  add .
+git  commit  -m  "resume changed"
+git push origin main 
+
+
+URL :
+
+After the above steps are done you will see or get the URL in ABOUT section in top right side.
+
+
