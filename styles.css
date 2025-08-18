@@ -198,3 +198,53 @@ body {
   transform: scale(1.05);
   box-shadow: 0 0 40px #00ffd5;
 }
+
+
+
+
+
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  color: white;
+  background: #222; /* Default dark background */
+  transition: all 0.3s ease;
+}
+
+.contact-btn i {
+  font-size: 18px;
+}
+
+/* Hover brand colors */
+.contact-btn.email:hover {
+  background: #D44638; /* Gmail Red */
+}
+
+.contact-btn.phone:hover {
+  background: #007BFF; /* Blue for calls */
+}
+
+.contact-btn.whatsapp:hover {
+  background: #25D366; /* WhatsApp Green */
+}
+
+.contact-btn.linkedin:hover {
+  background: #0A66C2; /* LinkedIn Blue */
+}
+
+.contact-btn.instagram:hover {
+  background: #E4405F; /* Instagram Pink */
+}
